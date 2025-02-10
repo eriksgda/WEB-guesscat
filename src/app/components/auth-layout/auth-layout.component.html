@@ -1,24 +1,30 @@
 <main>
-    <section>
-        <img src="/src/assets/cat-logo.jpg" alt="">
-        <h2>
+    <section class="auth-section">
+        <img src="src/assets/cat-logo.jpg" alt="">
+        <h2>{{ title }}</h2>
+        
+        <ng-content>
+        </ng-content>
 
-        </h2>
-        <button>
-
-        </button>
-        <div>
-            <span>or</span>
+        <div class="btn-wrapper">
+            <button class="btn-primary">
+                {{ primaryBtnText }}
+            </button>
+            <div class="divider">
+                <div></div>
+                <span>or</span>
+                <div></div>
+            </div>
+            <button class="btn-secondary">
+                {{ secondaryBtnText }}
+            </button>
         </div>
-        <button>
-
-        </button>
     </section>
 
-    <section>
+    <section class="main-section">
         <h1>
 
         </h1>
-        <img src="/src/assets/cat-principal-img.jpg" alt="">
+        <img src="src/assets/cat-principal-img.jpg" alt="">
     </section>
 </main>
