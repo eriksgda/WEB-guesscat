@@ -1,3 +1,26 @@
-<app-auth-layout>
-     
+<app-auth-layout
+title="Login into yout account!"
+primaryBtnText="Login now!"
+secondaryBtnText="Sign up now!"
+>
+     <form [formGroup]="loginForm">
+        <app-primary-input
+            formControlName="username"
+            inputName="username"
+            type="username"
+            label="Username"
+            placeholder="Type your username here!"
+        >
+            <img src="" alt="">
+        </app-primary-input>
+        <app-primary-input
+            formControlName="password"
+            inputName="password"
+            type="password"
+            label="Password"
+            placeholder="Type your password here!"
+        >
+            <img src="" alt="">
+        </app-primary-input>
+     </form>
 </app-auth-layout>
