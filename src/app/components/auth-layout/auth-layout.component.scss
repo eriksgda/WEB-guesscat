@@ -49,14 +49,14 @@ main {
                 gap: 20px;
 
                 font-size: 16px;
-                color: $bg-color;
-                font-weight: 400;
+                color: $bg-secondary-color;
+                font-weight: 700;
                 text-transform: uppercase;
 
                 div {
                     flex-grow: 1;
                     height: 2px;
-                    background-color: $bg-color;
+                    background-color: $bg-secondary-color;
                 }
             }
 

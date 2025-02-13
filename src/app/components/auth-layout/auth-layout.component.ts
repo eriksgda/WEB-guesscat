@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './auth-layout.component.scss'
 })
 export class AuthLayoutComponent {
-  @Input() title: string = "";
+  @Input() mainTitle: string = "";
   @Input() primaryBtnText: string = "";
   @Input() secondaryBtnText: string = "";
 }
