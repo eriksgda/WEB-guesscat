@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-auth-layout',
@@ -10,4 +10,15 @@ export class AuthLayoutComponent {
   @Input() mainTitle: string = "";
   @Input() primaryBtnText: string = "";
   @Input() secondaryBtnText: string = "";
+
+  @Output("submit") onSubmit = new EventEmitter();
+  @Output("navegate") onNavegate = new EventEmitter();
+  
+  submit() {
+    this.onSubmit.emit();
+  }
+
+  navegate() {
+    this.onNavegate.emit();
+  }
 }
