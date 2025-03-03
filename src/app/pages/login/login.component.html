@@ -2,6 +2,7 @@
 mainTitle="Login into yout account!"
 primaryBtnText="Login now!"
 secondaryBtnText="Sign up now!"
+[disablePrimaryBtn]="!loginForm.valid"
 (submit)="submit()"
 (navegate)="navegate()"
 >

@@ -10,6 +10,7 @@ export class AuthLayoutComponent {
   @Input() mainTitle: string = "";
   @Input() primaryBtnText: string = "";
   @Input() secondaryBtnText: string = "";
+  @Input() disablePrimaryBtn: boolean = true;
 
   @Output("submit") onSubmit = new EventEmitter();
   @Output("navegate") onNavegate = new EventEmitter();
