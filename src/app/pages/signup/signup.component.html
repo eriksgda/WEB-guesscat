@@ -1,0 +1,58 @@
+<app-auth-layout
+mainTitle="Sing up and start today!"
+primaryBtnText="Sign up now!"
+secondaryBtnText="Login now!"
+[disablePrimaryBtn]="!signupForm.valid"
+(submit)="submit()"
+(navegate)="navegate()"
+>
+     <form [formGroup]="signupForm">
+        <app-primary-input
+            formControlName="username"
+            inputName="username"
+            type="text"
+            label="Your username"
+            placeholder="Type your username here!"
+        >
+            <div class="icon">
+                <img src="/assets/username.svg"/>
+            </div>
+        </app-primary-input>
+
+        <app-primary-input
+            formControlName="usernameConfirm"
+            inputName="usernameConfirm"
+            type="text"
+            label="Confirm your username"
+            placeholder="Type your username here!"
+        >
+            <div class="icon">
+                <img src="/assets/username.svg"/>
+            </div>
+        </app-primary-input>
+
+        <app-primary-input
+            formControlName="password"
+            inputName="password"
+            type="password"
+            label="Your password"
+            placeholder="Confirm your password here!"
+        >
+            <div class="icon">
+                <img src="/assets/password.svg"/>
+            </div>
+        </app-primary-input>
+
+        <app-primary-input
+            formControlName="passwordConfirm"
+            inputName="passwordConfirm"
+            type="password"
+            label="Confirm your password"
+            placeholder="Confirm your password here!"
+        >
+            <div class="icon">
+                <img src="/assets/password.svg"/>
+            </div>
+        </app-primary-input>
+    </form>
+</app-auth-layout>
