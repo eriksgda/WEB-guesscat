@@ -5,6 +5,7 @@ import { PrimaryInputComponent } from '../../components/primary-input/primary-in
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { ToastrService } from 'ngx-toastr';
+import { SignupService } from '../../services/signup.service';
 
 interface SignupForm {
   username: FormControl,
@@ -31,7 +32,7 @@ export class SignupComponent {
 
   constructor(
     private router: Router,
-    private loginService: LoginService,
+    private signupService: SignupService,
     private toastrService: ToastrService
   ) {
     this.signupForm = new FormGroup({
@@ -43,9 +44,9 @@ export class SignupComponent {
   }
 
   submit() {
-    this.loginService.login(this.signupForm.value.username, this.signupForm.value.password).subscribe({
-      next: () => this.toastrService.success("Successful login!"),
-      error: () => this.toastrService.error("Authentication error!")
+    this.signupService.signup(this.signupForm.value.username, this.signupForm.value.password).subscribe({
+      next: () => this.toastrService.success("Successful sign up!"),
+      error: () => this.toastrService.error("Register error!")
     });
   }
 
