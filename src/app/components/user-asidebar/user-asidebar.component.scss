@@ -1,0 +1,88 @@
+@import "../../../styles/variables.scss";
+
+:host {
+    flex-grow: 0.1;
+    display: flex;
+    height: 100%;
+}
+
+.user-details-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+
+    padding: 36px;
+
+    h1 {
+        padding-bottom: 44px;
+    }
+
+    .btn-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        gap: 32px;
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            gap: 20px;
+
+            font-size: 16px;
+            color: $bg-secondary-color;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            div {
+                flex-grow: 1;
+                height: 2px;
+                background-color: $bg-secondary-color;
+            }
+        }
+    }
+
+    button {
+        width: 100%;
+        padding: 12px 24px;
+
+        background: transparent;
+
+        border: none;
+        border-radius: 8px;
+
+        font-size: 16px;
+        font-weight: 500;
+
+        cursor: pointer;
+
+        &.btn-start-game {
+            background-color: $primary-color;
+            color: white;
+
+            box-shadow: 0px 8px 12px rgba(148, 64, 255, 0.2);
+        }
+
+        &.btn-match-history {
+            border: 1px solid $primary-color;
+            color: $primary-color;
+        }
+
+        &.btn-logout {
+            border: 1px solid red;
+            color: red;
+        }
+    }
+
+}
+
+.btn-logout-container {
+    width: 100%;
+}
