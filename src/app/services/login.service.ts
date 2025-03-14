@@ -9,7 +9,7 @@ import { AuthService } from './auth.service';
 })
 export class LoginService {
 
-  apiUrl: string = "http://localhost:8080/cat/auth/login";
+  private apiUrl: string = "http://localhost:8080/cat/auth/login";
 
   constructor(private httpClient: HttpClient, private authService: AuthService) { }
 

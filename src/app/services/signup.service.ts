@@ -9,7 +9,7 @@ import { AuthService } from './auth.service';
 })
 export class SignupService {
 
-  apiUrl: string = "http://localhost:8080/cat/auth/register";
+  private apiUrl: string = "http://localhost:8080/cat/auth/register";
 
   constructor(private httpClient: HttpClient, private authService: AuthService) { }
 
