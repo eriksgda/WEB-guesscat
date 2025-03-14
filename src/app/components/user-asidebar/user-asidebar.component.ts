@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user-asidebar',
@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './user-asidebar.component.scss'
 })
 export class UserAsidebarComponent {
+  @Output() newGameEvent = new EventEmitter<void>();
 
+  startGame(): void {
+    this.newGameEvent.emit();
+  }
 }
