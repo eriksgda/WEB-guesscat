@@ -19,7 +19,7 @@ export class AuthLayoutComponent {
     this.onSubmit.emit();
   }
 
-  navegate() {
+  navigate() {
     this.onNavegate.emit();
   }
 }
