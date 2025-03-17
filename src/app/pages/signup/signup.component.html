@@ -4,13 +4,14 @@ primaryBtnText="Sign up now!"
 secondaryBtnText="Login now!"
 [disablePrimaryBtn]="!signupForm.valid"
 (submit)="submit()"
-(navegate)="navegate()"
+(navegate)="navigate()"
 >
      <form [formGroup]="signupForm">
         <app-primary-input
             formControlName="username"
             inputName="username"
             type="text"
+            autoComplete="username"
             label="Your username"
             placeholder="Type your username here!"
         >
@@ -18,23 +19,11 @@ secondaryBtnText="Login now!"
                 <img src="/assets/username.svg"/>
             </div>
         </app-primary-input>
-
-        <app-primary-input
-            formControlName="usernameConfirm"
-            inputName="usernameConfirm"
-            type="text"
-            label="Confirm your username"
-            placeholder="Type your username here!"
-        >
-            <div class="icon">
-                <img src="/assets/username.svg"/>
-            </div>
-        </app-primary-input>
-
         <app-primary-input
             formControlName="password"
             inputName="password"
             type="password"
+            autoComplete="new-password"
             label="Your password"
             placeholder="Confirm your password here!"
         >
@@ -47,6 +36,7 @@ secondaryBtnText="Login now!"
             formControlName="passwordConfirm"
             inputName="passwordConfirm"
             type="password"
+            autoComplete="new-password"
             label="Confirm your password"
             placeholder="Confirm your password here!"
         >

@@ -2,7 +2,10 @@
     <label [for]="inputName">{{ label }}</label>
     <div class="input-content">
         <input 
+            [id]="inputName" 
+            [name]="inputName"
             [type]="type" 
+            [autocomplete]="autoComplete"
             [placeholder]="placeholder"
             [value]="value"
             (input)="onInput($event)"

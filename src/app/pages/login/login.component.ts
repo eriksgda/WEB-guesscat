@@ -6,10 +6,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { ToastrService } from 'ngx-toastr';
 
-interface LoginForm {
-  username: FormControl,
-  password: FormControl
-}
+import { LoginForm } from '../../types/login-form.model';
 
 @Component({
   selector: 'app-login',
@@ -40,12 +37,15 @@ export class LoginComponent {
 
   submit() {
     this.loginService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe({
-      next: () => this.toastrService.success("Successful login!"),
+      next: () => {
+        this.toastrService.success("Successful login!");
+        this.router.navigate(["game"]);
+      },
       error: () => this.toastrService.error("Authentication error!")
     });
   }
 
-  navegate() {
-    this.router.navigate(["singup"]);
+  navigate() {
+    this.router.navigate(["signup"]);
   }
 }

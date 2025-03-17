@@ -7,12 +7,7 @@ import { LoginService } from '../../services/login.service';
 import { ToastrService } from 'ngx-toastr';
 import { SignupService } from '../../services/signup.service';
 
-interface SignupForm {
-  username: FormControl,
-  usernameConfirm: FormControl,
-  password: FormControl,
-  passwordConfirm: FormControl
-}
+import { SignupForm } from '../../types/signup-form.model';
 
 @Component({
   selector: 'app-signup',
@@ -37,7 +32,6 @@ export class SignupComponent {
   ) {
     this.signupForm = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      usernameConfirm: new FormControl('', [Validators.required, Validators.minLength(6)]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
       passwordConfirm: new FormControl('', [Validators.required, Validators.minLength(6)])
     })
@@ -45,12 +39,15 @@ export class SignupComponent {
 
   submit() {
     this.signupService.signup(this.signupForm.value.username, this.signupForm.value.password).subscribe({
-      next: () => this.toastrService.success("Successful sign up!"),
+      next: () => {
+        this.toastrService.success("Successful sign up!");
+        this.router.navigate(["game"]);
+      },
       error: () => this.toastrService.error("Register error!")
     });
   }
 
-  navegate() {
+  navigate() {
     this.router.navigate(["login"]);
   }
 }

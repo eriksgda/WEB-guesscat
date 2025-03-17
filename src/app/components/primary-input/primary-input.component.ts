@@ -23,6 +23,7 @@ export class PrimaryInputComponent implements ControlValueAccessor{
   @Input() inputName: string = "";
   @Input() placeholder: string = "";
   @Input() label: string = "";
+  @Input() autoComplete: string = "";
 
   value: string = "";
 

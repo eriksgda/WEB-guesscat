@@ -4,13 +4,14 @@ primaryBtnText="Login now!"
 secondaryBtnText="Sign up now!"
 [disablePrimaryBtn]="!loginForm.valid"
 (submit)="submit()"
-(navegate)="navegate()"
+(navegate)="navigate()"
 >
      <form [formGroup]="loginForm">
         <app-primary-input
             formControlName="username"
             inputName="username"
             type="text"
+            autoComplete="username"
             label="Your username"
             placeholder="Type your username here!"
         >
@@ -22,6 +23,7 @@ secondaryBtnText="Sign up now!"
             formControlName="password"
             inputName="password"
             type="password"
+            autoComplete="current-password"
             label="Your password"
             placeholder="Type your password here!"
         >
