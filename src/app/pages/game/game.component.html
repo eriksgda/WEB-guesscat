@@ -1,36 +1,39 @@
 <main>
-    <app-user-asidebar (newGameEvent)="startGame()">
-    </app-user-asidebar>
+  <app-user-asidebar (newGameEvent)="startGame()">
+  </app-user-asidebar>
 
-    <section class="main-section">
-        <div class="game-container" *ngIf="gameStarted; else notStarted">
-            <div *ngFor="let row of grid" class="row">
-                <div *ngFor="let cell of row" class="cell"
-                     [class.cell-correct]="cell.status === 'correct'"
-                     [class.cell-present]="cell.status === 'present'"
-                     [class.cell-default]="cell.status === 'default'">
-                  {{ cell.letter | uppercase }}
-                </div>
-              </div>
+  <section class="main-section">
+    <div class="game-container" *ngIf="gameStarted; else notStarted">
+      <div *ngFor="let row of grid" class="row">
+        {{ this.grid.indexOf(row) + 1 }} 
+        <div *ngFor="let cell of row" class="cell"
+          [class.cell-correct]="cell.status === 'correct'"
+          [class.cell-present]="cell.status === 'present'"
+          [class.cell-default]="cell.status === 'default'">
+            {{ cell.letter | uppercase }}
+        </div>
+      </div>
       
-            <form [formGroup]="gameForm" (ngSubmit)="submitGuess()" *ngIf="!gameOver">
-              <input type="text"
-                     formControlName="guess"
-                     [attr.maxlength]="this.length"
-                     placeholder="Your guess"
-                     autofocus>
-              <button type="submit">Submit</button>
-            </form>
+      <form [formGroup]="gameForm" (ngSubmit)="submitGuess()" *ngIf="!gameOver">
+        <input type="text"
+          id="guess-input"
+          name="guess"
+          formControlName="guess"
+          [attr.maxlength]="this.length"
+          placeholder="Your guess"
+          autofocus>
+        <button type="submit">Submit</button>
+      </form>
       
-            <div *ngIf="gameOver">
-              <h2>
-                {{ this.guesses[this.guesses.length - 1] === this.word ? 'Congrats, you are correct!' : 'Game Over!' }}
-              </h2>
-            </div>
-          </div>
+      <div *ngIf="gameOver">
+        <h2>
+          {{ this.guesses[this.guesses.length - 1] === this.word ? 'Congrats, you are correct!' : 'Game Over!' }}
+        </h2>
+      </div>
+    </div>
       
-          <ng-template #notStarted>
-            <p>Please, start the game in the asidebar</p>
-          </ng-template>
-    </section>
+    <ng-template #notStarted>
+      <p>Please, start the game in the asidebar</p>
+    </ng-template>
+  </section>
 </main>
