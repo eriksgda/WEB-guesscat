@@ -42,12 +42,17 @@ export class GameComponent{
         console.error("Error.");
         return;
       }
+
+      this.gameOver = false;
       
       this.word = response.word.toLowerCase();
       this.length = this.word.length;
       this.maxGuesses = this.length;
 
       this.playedIn = new Date();
+
+      this.grid.length = 0;
+      this.guesses.length = 0;
 
       for (let i = 0; i < this.maxGuesses; i++) {
         this.grid.push(Array(this.length).fill({letter: "", status: "default"}));
@@ -84,12 +89,12 @@ export class GameComponent{
   validateGuess(guess: string): LetterStatus[] {
     const result: LetterStatus[] = [];
     const wordArray = this.word.split('');
-    const marca: boolean[] = Array(this.length).fill(false);
+    const checked: boolean[] = new Array(this.length).fill(false);
 
     for (let i = 0; i< this.length; i++) {
       if (guess[i] === wordArray[i]) {
         result.push({letter: guess[i], status: "correct"});
-        marca[i] = true;
+        checked[i] = true;
       } else {
         result.push({letter: guess[i], status: "default"});
       }
@@ -98,11 +103,11 @@ export class GameComponent{
     for (let i = 0; i < this.length; i++) {
       if (result[i].status === "correct") {continue;}
 
-      const index = wordArray.findIndex((l, j) => l === guess[i] && !marca[j]);
+      const index = wordArray.findIndex((l, j) => l === guess[i] && !checked[j]);
 
       if (index !== -1) {
         result[i].status = "present";
-        marca[index] = true;
+        checked[index] = true;
       }
     }
 
