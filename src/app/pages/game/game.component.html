@@ -1,5 +1,5 @@
 <main>
-  <app-user-asidebar (newGameEvent)="startGame()">
+  <app-user-asidebar (newGameEvent)="startGame()" (newHistoryEvent)="getMatchHistory()">
   </app-user-asidebar>
 
   <section class="main-section">
@@ -30,8 +30,17 @@
           {{ this.guesses[this.guesses.length - 1] === this.word ? 'Congrats, you are correct!' : 'Game Over!' }}
         </h2>
       </div>
+
     </div>
-      
+    
+    <div *ngIf="matchHistory">
+      <div *ngFor="let history of matchHistoryData.matchHistory">
+        <p>
+          {{matchHistoryData.username}}
+          {{history.word  + history.guesses + history.playedIn}}
+        </p>
+      </div>
+    </div>
     <ng-template #notStarted>
       <p>Please, start the game in the asidebar</p>
     </ng-template>

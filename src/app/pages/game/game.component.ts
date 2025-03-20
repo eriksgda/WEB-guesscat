@@ -5,6 +5,8 @@ import { LetterStatus } from '../../types/letter-status.model';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { GameService } from '../../services/game.service';
 import { GameResultDTO } from '../../types/game-resultDTO.type';
+import { MatchHistoryDTO } from '../../types/match-historyDTO.type';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-game',
@@ -28,13 +30,27 @@ export class GameComponent{
   gameForm!: FormGroup;
   grid: LetterStatus[][] = [];
   gameStarted: boolean = false;
+  matchHistory: boolean = false;
+  matchHistoryData!: MatchHistoryDTO;
 
-  constructor(private gameService: GameService, private formBuilder: FormBuilder) {
+  constructor(private gameService: GameService,private userService: UserService, private formBuilder: FormBuilder) {
     this.gameForm = this.formBuilder.group({
       guess: ["", [Validators.required, Validators.minLength(1)]]
     });
   }
 
+  getMatchHistory(): void {
+    this.userService.getUserMatchHistory().subscribe(response => {
+      if (!response || !response.username && !response.matchHistory) {
+        console.error("Error.");
+        return;
+      }
+      this.gameStarted = false;
+      this.matchHistoryData = response;
+
+      this.matchHistory = true;
+    })
+  }
 
   startGame(): void {
     this.gameService.startGame().subscribe(response => {
@@ -43,6 +59,7 @@ export class GameComponent{
         return;
       }
 
+      this.matchHistory = false;
       this.gameOver = false;
       
       this.word = response.word.toLowerCase();
