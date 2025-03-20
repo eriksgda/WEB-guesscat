@@ -1,6 +1,6 @@
 <section class="user-details-section">
     <div class="btn-wrapper">
-        <h1>GUESSCAT GAME</h1>
+        <h1>cat: {{this.username}} </h1>
         
         <button class="btn-start-game" (click)="startGame()">
             New game
@@ -10,7 +10,7 @@
             <span>or</span>
             <div></div>
         </div>
-        <button class="btn-match-history">
+        <button class="btn-match-history" (click)="viewMatchHistory()">
             Match history
         </button>
     </div>
