@@ -25,4 +25,20 @@ export class AuthService {
   getToken(): string | null {
     return sessionStorage.getItem(this.AUTH_TOKEN_KEY);
   }
+
+  getUsername(): string | null {
+    const token = this.getToken();
+    if (!token) {
+      return null;
+    }
+    try {
+      const payloadBase64 = token.split('.')[1];
+      const payloadJson = atob(payloadBase64);
+      const payload = JSON.parse(payloadJson);
+      return payload.username || null;
+    } catch (error) {
+      console.error("Erro ao decodificar o token:", error);
+      return null;
+    }
+  }
 }
