@@ -1,6 +1,6 @@
 <main>
     <section class="auth-section">
-        <img src="assets/cat-logo.jpg"/>
+        <img src="assets/catlogo.svg"/>
         <h2>{{ mainTitle }}</h2>
         
         <ng-content>
@@ -22,7 +22,30 @@
     </section>
 
     <section class="main-section">
-        <h1>GuessCAT Game</h1>
-        <img src="assets/cat-principal-img.jpg"/>
+        <div class="content-wrapper">
+            <h1>Welcome to GuessCAT Game!</h1>
+            
+            <h2><strong>How it Works:</strong></h2>
+            <ul>
+                <li><strong>Valid Characters:</strong> Disregard “Ç” and any accents (`, ^, ~, ´, etc.). Only words from the Portuguese language (pt-BR) are allowed.</li>
+                <li><strong>Matching Length:</strong> Your guesses must have the same number of letters as the secret word.</li>
+                <li><strong>Color-Coded Clues:</strong>
+                <ul>
+                    <li><strong>No Color:</strong> The letter is not in the secret word.</li>
+                    <li><strong>Yellow:</strong> The letter is in the word but in a different position.</li>
+                    <li><strong>Green:</strong> The letter is in the word and in the correct position.</li>
+                </ul>
+                </li>
+            </ul>
+            
+            <h2><strong>How to Play:</strong></h2>
+            <ol>
+                <li><strong>Sign Up or Log In:</strong> Create an account or log in to start playing.</li>
+                <li><strong>Start Game:</strong> Click the "Start Game" button in the sidebar to begin a new match.</li>
+                <li><strong>Enter Your Guesses:</strong> Input your word guesses, which must be the same length as the secret word.</li>
+                <li><strong>Analyze the Feedback:</strong> Use the color hints to refine your next guesses.</li>
+                <li><strong>Match History:</strong> Use the "Match History" button to view the games you’ve played.</li>
+            </ol>
+        </div>
     </section>
-</main>
+</main> 

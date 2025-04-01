@@ -8,6 +8,8 @@ main {
 
     height: 100%;
 
+    color: $text-color;
+
     section {
         display: flex;
         flex-direction: column;
@@ -19,10 +21,14 @@ main {
 
     .auth-section {
         flex-grow: 0.1;
-        padding: 0 36px;
+        padding: 0 24px;
+
+        background-color: $bg-color;
 
         img {
             margin-bottom: 24px;
+            height: 120px;
+            width: 100%;
         }
 
         h2 {
@@ -75,12 +81,12 @@ main {
                 cursor: pointer;
 
                 &:disabled {
-                    opacity: 0.8;
+                    opacity: 0.7;
                 }
     
                 &.btn-primary {
                     background-color: $primary-color;
-                    color: white;
+                    color: $text-color;
     
                     box-shadow: 0px 8px 12px rgba(148, 64, 255, 0.2);
                 }
@@ -98,6 +104,32 @@ main {
         flex-grow: 1;
         gap: 8px;
 
-        background-color: $bg-color;
+        background-color: $bg-secondary-color;
+        color: $text-color;
+
+        h1 {
+            color: $primary-color;
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin: 20px 0 10px;
+        }
+        
+        p, li {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+        }
+        
+        ul ul {
+            list-style-type: circle;
+            margin-left: 20px;
+        }
     }
 }
