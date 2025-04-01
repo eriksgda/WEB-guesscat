@@ -33,4 +33,8 @@ export class UserAsidebarComponent implements OnInit{
   viewMatchHistory(): void {
     this.newHistoryEvent.emit();
   }
+
+  logout(): void {
+    this.authService.clearAuthToken();
+  }
 }
