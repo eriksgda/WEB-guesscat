@@ -1,6 +1,6 @@
 <section class="user-details-section">
     <div class="btn-wrapper">
-        <h1>cat: {{this.username}} </h1>
+        <h1>CAT: {{this.username}} </h1>
         
         <button class="btn-start-game" (click)="startGame()">
             New game
@@ -15,7 +15,7 @@
         </button>
     </div>
     <div class="btn-logout-container">
-        <button class="btn-logout">
+        <button class="btn-logout" (click)="logout()">
             Log out
         </button>
     </div>
