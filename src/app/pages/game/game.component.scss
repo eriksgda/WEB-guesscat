@@ -3,6 +3,7 @@
 main {
   display: flex;
   flex-direction: row;
+  overflow: hidden;
 
   height: 100%;
   width: 100%;
@@ -13,17 +14,23 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    overflow-y: auto;
 
     flex-grow: 1;
 
     background-color: $bg-secondary-color;
+
+    p {
+      margin-top: 350px;
+    }
 
     .game-container {
       display: flex;
       flex-direction: column;
       gap: 10px;
       align-items: center;
+      margin: 60px 0 60px;
     }
           
     .row {
@@ -109,6 +116,41 @@ main {
       }
     }
 
+    .match-history-container {
+      width: 1300px;
+      margin: 60px auto;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      overflow-x: auto;
+    }
     
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed; 
+    }
+    
+    th, td {
+      border: 1px solid $primary-color;
+      background-color: $bg-color;
+      padding: 8px;
+      text-align: left;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    
+    th {
+      background-color: $primary-color;
+    }
+    
+    .guesses-column {
+      width: 800px;
+    }
+    
+    .guesses-content {
+      padding: 2px;
+      max-height: 3em;
+      overflow: hidden;
+    }
   } 
 }
