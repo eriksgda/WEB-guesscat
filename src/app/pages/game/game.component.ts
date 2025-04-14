@@ -44,7 +44,10 @@ export class GameComponent{
       if (!response || !response.username && !response.matchHistory) {
         console.error("Error.");
         return;
-      }
+      } if (response.matchHistory.length === 0) {
+        this.matchHistory = false;
+        return;
+      } 
       this.gameStarted = false;
       this.matchHistoryData = response;
 
