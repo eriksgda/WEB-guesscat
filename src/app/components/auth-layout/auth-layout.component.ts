@@ -13,13 +13,13 @@ export class AuthLayoutComponent {
   @Input() disablePrimaryBtn: boolean = true;
 
   @Output("submit") onSubmit = new EventEmitter();
-  @Output("navegate") onNavegate = new EventEmitter();
-  
+  @Output("navigate") onNavigate = new EventEmitter();
+
   submit() {
     this.onSubmit.emit();
   }
 
   navigate() {
-    this.onNavegate.emit();
+    this.onNavigate.emit();
   }
 }

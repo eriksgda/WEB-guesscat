@@ -17,8 +17,8 @@ export class GameService {
     const token: string | null = this.authService.getToken();
 
     if (!token) {
-      console.error("Nedd authentication to continue.");
-      return new Observable(observer => observer.error("No authentication token."));;
+      console.error("Need authentication to continue.");
+      return new Observable(observer => observer.error("No authentication token."));
     }
 
     const headers = new HttpHeaders({
@@ -32,8 +32,8 @@ export class GameService {
     const token: string | null = this.authService.getToken();
 
     if (!token) {
-      console.error("Nedd authentication to continue.");
-      return new Observable(observer => observer.error("No authentication token."));;
+      console.error("Need authentication to continue.");
+      return new Observable(observer => observer.error("No authentication token."));
     }
 
     const headers = new HttpHeaders({
