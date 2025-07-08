@@ -4,7 +4,7 @@ primaryBtnText="Login now!"
 secondaryBtnText="Sign up now!"
 [disablePrimaryBtn]="!loginForm.valid"
 (submit)="submit()"
-(navegate)="navigate()"
+(navigate)="navigate()"
 >
      <form [formGroup]="loginForm">
         <app-primary-input
@@ -16,7 +16,7 @@ secondaryBtnText="Sign up now!"
             placeholder="Type your username here!"
         >
             <div class="icon">
-                <img src="/assets/username.svg"/>
+                <img src="/assets/username.svg" alt=""/>
             </div>
         </app-primary-input>
         <app-primary-input
@@ -28,7 +28,7 @@ secondaryBtnText="Sign up now!"
             placeholder="Type your password here!"
         >
             <div class="icon">
-                <img src="/assets/password.svg"/>
+                <img src="/assets/password.svg" alt=""/>
             </div>
         </app-primary-input>
         <span>Forgot password?</span>

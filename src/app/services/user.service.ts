@@ -17,7 +17,7 @@ export class UserService {
     const token: string | null = this.authService.getToken();
 
     if (!token) {
-      console.error("Nedd authentication to continue.");
+      console.error("Need authentication to continue.");
       return new Observable(observer => observer.error("No authentication token."));;
     }
 
