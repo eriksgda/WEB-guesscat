@@ -1,4 +1,4 @@
-@import "../../../styles/variables.scss";
+@use "../../../styles/variables.scss" as var;
 
 main {
     display: flex;
@@ -6,7 +6,7 @@ main {
 
     height: 100vh;
 
-    color: $text-color;
+    color: var.$text-color;
 
     .auth-section {
         height: 100%;
@@ -19,7 +19,7 @@ main {
         width: 22vw;
         padding: 1.5rem;
 
-        background-color: $bg-color;
+        background-color: var.$bg-color;
 
         img {
             width: 100%;
@@ -46,7 +46,7 @@ main {
                 width: 100%;
                 gap: 1rem;
 
-                color: $bg-secondary-color;
+                color: var.$bg-secondary-color;
 
                 font-weight: bold;
                 text-transform: uppercase;
@@ -54,7 +54,7 @@ main {
                 div {
                     width: 100%;
                     height: 2px;
-                    background-color: $bg-secondary-color;
+                    background-color: var.$bg-secondary-color;
                 }
             }
 
@@ -77,15 +77,15 @@ main {
                 }
 
                 &.btn-primary {
-                    background-color: $primary-color;
-                    color: $text-color;
+                    background-color: var.$primary-color;
+                    color: var.$text-color;
 
                     box-shadow: 0 8px 12px rgba(148, 64, 255, 0.2);
                 }
 
                 &.btn-secondary {
-                    border: 1px solid $primary-color;
-                    color: $primary-color;
+                    border: 1px solid var.$primary-color;
+                    color: var.$primary-color;
                 }
 
                 &:not(:disabled):hover {
@@ -103,35 +103,67 @@ main {
 
         width: 78vw;
 
-        background-color: $bg-secondary-color;
-        color: $text-color;
+        background-color: var.$bg-secondary-color;
+        color: var.$text-color;
 
         .content-wrapper {
           display: flex;
           flex-direction: column;
           align-items: center;
-          text-align: justify;
+
+          line-height: 1.6;
 
           width: 80%;
           height: 90%;
           max-height: 90%;
 
-          padding: 1rem;
+          padding: 2rem;
 
-          background-color: $bg-color;
+          background-color: var.$bg-color;
           border-radius: 8px;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+          h2{
+            font-size: 1.5rem;
+          }
+
+          .about-wrapper{
+            padding: 2rem;
+          }
+
+          .text-wrapper {
+            width: 100%;
+            padding: 0 2rem 2rem;
+          }
         }
 
         .buttons-wrapper {
           display: flex;
           flex-direction: column;
+          align-items: center;
 
           gap: 1rem;
 
           height: 100%;
 
           padding-top: 2rem;
+          margin-left: 2rem;
+
+          button{
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+
+            color: var.$text-color;
+            opacity: 0.6;
+
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+              transform: scale(1.05);
+              opacity: 1;
+            }
+          }
         }
     }
 

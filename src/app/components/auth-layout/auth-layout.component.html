@@ -23,15 +23,58 @@
 
     <section class="main-section">
       <div class="content-wrapper">
-        <h3>About the project and the game </h3>
-        <p>
-          test
-        </p>
+        <h2>About the project and the game </h2>
+        <div class="about-wrapper">
+          <p>
+            Esse projeto teve como proprósito educacional, ou seja, eu fiz apenas com o intuito de aprender a desenvolver
+            um website por completo, incluindo banco de dados, backend e frontend.
+            <br>
+            O GuessCAT possui grande inspiração no site Termo, entretanto tem algumas variações do original.
+            <br>
+            <strong>-</strong> É necessário se cadastrar no site para poder jogar, como já informado, o site possui
+            intuito educacional, isso inclui autenticação e autorização!
+            <br>
+            <strong>-</strong> Você pode jogar quantas vezes quiser, nao se prenda a jogar apenas um por dia!
+          </p>
+        </div>
+        <div class="text-wrapper">
+          <h3>Language button</h3>
+          <div class="image-wrapper">
+            <img src="" alt=""/>
+          </div>
+          <p>
+            Aqui vou explicar o botao de LAN. deixar a interface em EN ou PT
+          </p>
+        </div>
+        <div class="text-wrapper">
+          <h3>Learn button</h3>
+          <div class="image-wrapper">
+            <img src="" alt=""/>
+          </div>
+          <p>
+            Aqui vou explicar o botao de (?). explicar as regras do jogo
+          </p>
+        </div>
+        <div class="text-wrapper">
+          <h3>Contact button</h3>
+          <div class="image-wrapper">
+            <img src="" alt=""/>
+          </div>
+          <p>
+            Aqui vou explicar o botao de CON. detalhes sobre o projeto e contatos
+          </p>
+        </div>
       </div>
       <div class="buttons-wrapper">
-        <button (click)="toggleModal(ModalType.LEARN)">(?)</button>
-        <button (click)="toggleModal(ModalType.LANGUAGE)">LAN</button>
-        <button (click)="toggleModal(ModalType.CONTACTS)">CON</button>
+        <button (click)="toggleModal(ModalType.LEARN)">
+          <lucide-icon name="circle-question-mark" size="32"></lucide-icon>
+        </button>
+        <button (click)="toggleModal(ModalType.LANGUAGE)">
+          <lucide-icon name="languages" size="32"></lucide-icon>
+        </button>
+        <button (click)="toggleModal(ModalType.CONTACTS)">
+          <lucide-icon name="ellipsis"></lucide-icon>
+        </button>
       </div>
     </section>
 

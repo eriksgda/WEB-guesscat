@@ -1,11 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ModalType } from '../../types/modal-type.enum';
 import {ModalComponent} from '../modal/modal.component';
+import {LucideAngularModule} from 'lucide-angular';
 
 @Component({
   selector: 'app-auth-layout',
   imports: [
-    ModalComponent
+    ModalComponent,
+    LucideAngularModule
   ],
   templateUrl: './auth-layout.component.html',
   styleUrl: './auth-layout.component.scss'
