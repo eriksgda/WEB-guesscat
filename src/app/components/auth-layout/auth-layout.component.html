@@ -29,9 +29,12 @@
         </p>
       </div>
       <div class="buttons-wrapper">
-        <button>(?)</button>
-        <button>LAN</button>
-        <button>CON</button>
+        <button (click)="toggleModal(ModalType.LEARN)">(?)</button>
+        <button (click)="toggleModal(ModalType.LANGUAGE)">LAN</button>
+        <button (click)="toggleModal(ModalType.CONTACTS)">CON</button>
       </div>
     </section>
+
+    <app-modal [class.open]="isModalOpen" [type]="type" (closed)="toggleModal(ModalType.CLOSE)"></app-modal>
+    <div class="overlay" [class.open]="isModalOpen" (click)="toggleModal(ModalType.CLOSE)"></div>
 </main>
