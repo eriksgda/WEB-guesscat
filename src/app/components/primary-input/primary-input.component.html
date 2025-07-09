@@ -1,14 +1,15 @@
 <div class="input-wrapper">
     <label [for]="inputName">{{ label }}</label>
     <div class="input-content">
-        <input 
-            [id]="inputName" 
+        <input
+            [id]="inputName"
             [name]="inputName"
-            [type]="type" 
+            [type]="type"
             [autocomplete]="autoComplete"
             [placeholder]="placeholder"
             [value]="value"
             (input)="onInput($event)"
         >
         <ng-content></ng-content>
+    </div>
 </div>

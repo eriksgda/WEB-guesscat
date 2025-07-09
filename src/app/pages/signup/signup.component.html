@@ -6,7 +6,7 @@ secondaryBtnText="Login now!"
 (submit)="submit()"
 (navigate)="navigate()"
 >
-     <form [formGroup]="signupForm">
+     <form [formGroup]="signupForm" class="signup-form">
         <app-primary-input
             formControlName="username"
             inputName="username"
@@ -16,7 +16,7 @@ secondaryBtnText="Login now!"
             placeholder="Type your username here!"
         >
             <div class="icon">
-                <img src="/assets/username.svg"/>
+                <img src="/assets/username.svg" alt=""/>
             </div>
         </app-primary-input>
         <app-primary-input

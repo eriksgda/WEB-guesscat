@@ -3,64 +3,56 @@
 main {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
 
-    height: 100%;
+    height: 100vh;
 
     color: $text-color;
 
-    section {
+    .auth-section {
+        height: 100%;
+
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
 
-        height: 100%;
-    }
-
-    .auth-section {
-        flex-grow: 0.1;
-        padding: 0 24px;
+        width: 22vw;
+        padding: 1.5rem;
 
         background-color: $bg-color;
 
         img {
-            margin-bottom: 24px;
-            height: 120px;
             width: 100%;
         }
 
         h2 {
-            font-size: 20px;
+            font-size: 1.4rem;
             font-weight: bold;
 
-            margin-bottom: 24px;
+            padding-top: 1rem;
         }
 
         .btn-wrapper {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
 
             width: 100%;
-            gap: 32px;
+            gap: 1.5rem;
 
             .divider {
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                width: 100%;
-                gap: 20px;
 
-                font-size: 16px;
+                width: 100%;
+                gap: 1rem;
+
                 color: $bg-secondary-color;
-                font-weight: 700;
+
+                font-weight: bold;
                 text-transform: uppercase;
 
                 div {
-                    flex-grow: 1;
+                    width: 100%;
                     height: 2px;
                     background-color: $bg-secondary-color;
                 }
@@ -68,32 +60,36 @@ main {
 
             button {
                 width: 100%;
-                padding: 12px 24px;
-    
+                padding: 0.6rem;
+
                 background: transparent;
-    
+
                 border: none;
                 border-radius: 8px;
-    
-                font-size: 16px;
-                font-weight: 500;
 
                 cursor: pointer;
 
+                transition: all 0.2s ease-in-out;
+
                 &:disabled {
-                    opacity: 0.7;
+                    opacity: 0.5;
+                    cursor: not-allowed;
                 }
-    
+
                 &.btn-primary {
                     background-color: $primary-color;
                     color: $text-color;
-    
-                    box-shadow: 0px 8px 12px rgba(148, 64, 255, 0.2);
+
+                    box-shadow: 0 8px 12px rgba(148, 64, 255, 0.2);
                 }
-    
+
                 &.btn-secondary {
                     border: 1px solid $primary-color;
                     color: $primary-color;
+                }
+
+                &:not(:disabled):hover {
+                  transform: scale(1.02);
                 }
             }
         }
@@ -101,35 +97,41 @@ main {
     }
 
     .main-section {
-        flex-grow: 1;
-        gap: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        width: 78vw;
 
         background-color: $bg-secondary-color;
         color: $text-color;
 
-        h1 {
-            color: $primary-color;
-            font-size: 48px;
-            margin-bottom: 10px;
+        .content-wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: justify;
+
+          width: 80%;
+          height: 90%;
+          max-height: 90%;
+
+          padding: 1rem;
+
+          background-color: $bg-color;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
-        
-        h2 {
-            font-size: 24px;
-            margin: 20px 0 10px;
-        }
-        
-        p, li {
-            font-size: 16px;
-            line-height: 1.5;
-        }
-        
-        ul, ol {
-            margin-left: 20px;
-        }
-        
-        ul ul {
-            list-style-type: circle;
-            margin-left: 20px;
+
+        .buttons-wrapper {
+          display: flex;
+          flex-direction: column;
+
+          gap: 1rem;
+
+          height: 100%;
+
+          padding-top: 2rem;
         }
     }
 }

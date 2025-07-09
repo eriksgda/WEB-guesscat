@@ -6,7 +6,7 @@ secondaryBtnText="Sign up now!"
 (submit)="submit()"
 (navigate)="navigate()"
 >
-     <form [formGroup]="loginForm">
+     <form [formGroup]="loginForm" class="login-form">
         <app-primary-input
             formControlName="username"
             inputName="username"
@@ -31,6 +31,5 @@ secondaryBtnText="Sign up now!"
                 <img src="/assets/password.svg" alt=""/>
             </div>
         </app-primary-input>
-        <span>Forgot password?</span>
     </form>
 </app-auth-layout>
