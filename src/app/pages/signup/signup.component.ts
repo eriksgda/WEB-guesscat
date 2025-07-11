@@ -8,13 +8,15 @@ import { ToastrService } from 'ngx-toastr';
 import { SignupService } from '../../services/signup.service';
 
 import { SignupForm } from '../../types/signup-form.model';
+import {LucideAngularModule} from 'lucide-angular';
 
 @Component({
   selector: 'app-signup',
   imports: [
     AuthLayoutComponent,
     ReactiveFormsModule,
-    PrimaryInputComponent
+    PrimaryInputComponent,
+    LucideAngularModule
   ],
   providers: [
     LoginService
