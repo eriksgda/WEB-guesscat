@@ -1,4 +1,50 @@
-<div>
-  <button (click)="onClose()">X</button>
+<div class="close-btn-wrapper">
+  <button (click)="onClose()">
+    <lucide-icon name="x" size=32></lucide-icon>
+  </button>
 </div>
-{{ type }}
+<div class="content-container">
+  <div class="content-wrapper">
+    @switch (type){
+      @case (ModalType.LEARN){
+        <h2>Como Jogar?</h2>
+        <p>
+          Uma palavra aleatória será escolhida no início de cada partida, e seu objetivo será adivinhá-la antes que seus palpites acabem.
+          Mas quantos palpites terei? Cinco? Seis?
+          <strong>NÃO!</strong> A quantidade de tentativas dependerá do tamanho da palavra secreta....Como assim?
+        </p>
+        <p>
+          Por exemplo:
+          <span><strong>gato</strong></span> → 4 letras = 4 tentativas; ou <span><strong>caleidoscópio</strong></span> → 13 letras = 13 tentativas;
+        </p>
+        <h3>Regras importantes:</h3>
+        <p>
+          - Palpite <strong>APENAS</strong> palavras da língua portuguesa (pt-BR).
+          <br>- Verbos e suas conjugações são permitidos (e recomendados para palpites, rs).
+          <br>Por exemplo: <em>miar</em>, <em>miava</em>, <em>miávamos</em>...
+          <br>- As palavras aleatórias não terão acentos ou caracteres especiais. Por isso, <strong>não use acentos</strong> (`, ´, ~, ^) e substitua letras como "Ç" por "C".
+          <br>Por exemplo: <em>ação</em> → <strong>acao</strong>, <em>caleidoscópio</em> → <strong>caleidoscopio</strong> ...
+        </p>
+        <h3>Dica de Cores:</h3>
+        <div class="colors-wrapper">
+          <img src="assets/palpite-placeholder.jpg" alt=""/>
+          <p>
+            <br>🟩 Letra correta na posição correta
+            <br>🟨 Letra presente na palavra, mas em posição diferente
+            <br>⬜ Letra que não está na palavra
+          </p>
+        </div>
+      }
+      @case (ModalType.LANGUAGE){
+        <p>
+          TESTE DE LANGUAGE
+        </p>
+      }
+      @case (ModalType.CONTACTS){
+        <p>
+          TESTE DE CONTACTS
+        </p>
+      }
+    }
+  </div>
+</div>

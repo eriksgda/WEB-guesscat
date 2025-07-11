@@ -1,9 +1,12 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ModalType} from '../../types/modal-type.enum';
+import {LucideAngularModule} from 'lucide-angular';
 
 @Component({
   selector: 'app-modal',
-  imports: [],
+  imports: [
+    LucideAngularModule
+  ],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.scss'
 })
@@ -14,4 +17,6 @@ export class ModalComponent {
   onClose() {
     this.closed.emit();
   }
+
+  protected readonly ModalType = ModalType;
 }

@@ -22,4 +22,79 @@
     opacity: 1;
     pointer-events: all;
   }
+
+  .close-btn-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 1rem 0;
+
+    button{
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+
+      color: var.$text-color;
+      opacity: 0.6;
+
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+    }
+  }
+
+  .content-container{
+    width: 100%;
+    height: 90%;
+    max-height: 90%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    padding-bottom: 2rem;
+
+    .content-wrapper{
+      width: 90%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      gap: 1rem;
+
+      h2{
+        font-size: 1.8rem;
+      }
+
+      h3{
+        font-size: 1.3rem;
+      }
+
+      span{
+        font-style: italic;
+      }
+
+      .colors-wrapper{
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        p{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+        }
+      }
+    }
+  }
+
 }
