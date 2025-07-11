@@ -5,7 +5,7 @@ import { routes } from './app.routes';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideToastr } from 'ngx-toastr';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import {CircleQuestionMark, Ellipsis, Languages, LucideAngularModule, Menu, X} from 'lucide-angular';
+import {CircleQuestionMark, Ellipsis, Languages, LockKeyhole, LucideAngularModule, Menu, User, X} from 'lucide-angular';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,7 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideToastr(),
     provideAnimations(),
     importProvidersFrom(LucideAngularModule.pick(
-      { Languages, X, Menu, CircleQuestionMark, Ellipsis }
+      { Languages, X, Menu, CircleQuestionMark, Ellipsis, LockKeyhole, User  }
     ))
   ]
 };
