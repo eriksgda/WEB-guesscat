@@ -7,13 +7,15 @@ import { LoginService } from '../../services/login.service';
 import { ToastrService } from 'ngx-toastr';
 
 import { LoginForm } from '../../types/login-form.model';
+import {LucideAngularModule} from 'lucide-angular';
 
 @Component({
   selector: 'app-login',
   imports: [
     AuthLayoutComponent,
     ReactiveFormsModule,
-    PrimaryInputComponent
+    PrimaryInputComponent,
+    LucideAngularModule
   ],
   providers: [
     LoginService
