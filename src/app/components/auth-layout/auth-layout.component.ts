@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ModalType } from '../../types/modal-type.enum';
+import { ModalType } from '../../types/enums/modal-type.enum';
 import {ModalComponent} from '../modal/modal.component';
 import {LucideAngularModule} from 'lucide-angular';
 

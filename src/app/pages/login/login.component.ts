@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { ToastrService } from 'ngx-toastr';
 
-import { LoginForm } from '../../types/login-form.model';
+import { LoginForm } from '../../types/models/login-form.model';
 import {LucideAngularModule} from 'lucide-angular';
 
 @Component({

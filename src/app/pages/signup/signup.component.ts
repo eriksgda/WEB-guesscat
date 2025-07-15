@@ -7,7 +7,7 @@ import { LoginService } from '../../services/login.service';
 import { ToastrService } from 'ngx-toastr';
 import { SignupService } from '../../services/signup.service';
 
-import { SignupForm } from '../../types/signup-form.model';
+import { SignupForm } from '../../types/models/signup-form.model';
 import {LucideAngularModule} from 'lucide-angular';
 
 @Component({

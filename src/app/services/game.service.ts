@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { GameResultDTO } from '../types/game-resultDTO.type';
+import { GameResultDTO } from '../types/dto/game-resultDTO.type';
 import { AuthService } from './auth.service';
 
 @Injectable({
