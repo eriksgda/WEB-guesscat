@@ -2,5 +2,7 @@ export enum ModalType{
   LEARN = "Learn",
   LANGUAGE = "Language",
   CONTACTS = "Contacts",
-  CLOSE = ""
+  CLOSE = "",
+  DEFEAT = "Defeat",
+  WIN = "Win"
 }
