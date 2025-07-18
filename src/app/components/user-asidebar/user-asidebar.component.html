@@ -2,7 +2,11 @@
     <div class="btn-wrapper">
         <h1>CAT: {{this.username}} </h1>
 
-        <button class="btn-start-game" (click)="startGame()">
+        <button
+          class="btn-start-game"
+          (click)="startGame()"
+          [disabled]="isGameStarted"
+        >
             New game
         </button>
         <div class="divider">

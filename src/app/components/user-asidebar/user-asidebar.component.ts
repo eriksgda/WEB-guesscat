@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -11,17 +11,17 @@ export class UserAsidebarComponent implements OnInit{
   @Output() newGameEvent = new EventEmitter<void>();
   @Output() newHistoryEvent = new EventEmitter<void>();
 
+  @Input() isGameStarted: boolean = false;
+
   username: string = "GUESSCATGAME";
-  
+
   constructor(private authService: AuthService) {
   }
 
   ngOnInit(): void {
     const aux = this.authService.getUsername();
 
-    if (!aux) {
-      return;
-    }
+    if (!aux) return;
 
     this.username = aux;
   }

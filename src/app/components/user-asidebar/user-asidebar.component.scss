@@ -49,40 +49,44 @@
     }
 
     button {
-        width: 100%;
-        padding: 0.6rem;
+      width: 100%;
+      padding: 0.6rem;
 
-        background: transparent;
+      background: transparent;
 
-        border: none;
-        border-radius: 8px;
+      border: none;
+      border-radius: 8px;
 
-        cursor: pointer;
+      cursor: pointer;
 
-        transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
 
-        &.btn-start-game {
-            background-color: var.$primary-color;
-            color: var.$text-color;
+      &.btn-start-game {
+        background-color: var.$primary-color;
+        color: var.$text-color;
 
-          box-shadow: 0 8px 12px rgba(148, 64, 255, 0.2);
+        box-shadow: 0 8px 12px rgba(148, 64, 255, 0.2);
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
         }
+      }
 
-        &.btn-match-history {
+      &.btn-match-history {
             border: 3px solid var.$primary-color;
             color: var.$primary-color;
         }
 
-        &.btn-logout {
-            border: 1px solid red;
-            color: red;
-        }
+      &.btn-logout {
+        border: 1px solid red;
+        color: red;
+      }
 
-        &:not(:disabled):hover {
-          transform: scale(1.02);
-        }
+      &:not(:disabled):hover {
+        transform: scale(1.02);
+      }
     }
-
 }
 
 .btn-logout-container {
