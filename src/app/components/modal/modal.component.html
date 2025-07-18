@@ -45,6 +45,24 @@
           TESTE DE CONTACTS
         </p>
       }
+      @case (ModalType.WIN) {
+        <p>
+          TESTE DE WIN
+        </p>
+        <p>{{ this.possibleContent?.id }}</p>
+        <p>{{ this.possibleContent?.guesses }}</p>
+        <p>{{ this.possibleContent?.word }}</p>
+        <p>{{ this.possibleContent?.playedIn }}</p>
+      }
+      @case (ModalType.DEFEAT) {
+        <p>
+          TESTE DE DEFEAT
+        </p>
+        <p>{{ this.possibleContent?.id }}</p>
+        <p>{{ this.possibleContent?.guesses }}</p>
+        <p>{{ this.possibleContent?.word }}</p>
+        <p>{{ this.possibleContent?.playedIn }}</p>
+      }
     }
   </div>
 </div>
