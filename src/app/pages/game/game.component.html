@@ -1,73 +1,24 @@
 <main>
-  <app-user-asidebar (newGameEvent)="startGame()" (newHistoryEvent)="getMatchHistory()">
+  <app-user-asidebar
+    (newGameEvent)="startGame()"
+    (newHistoryEvent)="getMatchHistory()"
+    [isGameStarted]="this.newGameButtonFLag"
+  >
   </app-user-asidebar>
 
   <section class="main-section">
-    <div *ngIf="gameStarted || matchHistory; else notStarted">
-      <div class="game-container" *ngIf="gameStarted">
-        <div *ngFor="let row of grid" class="row">
-        {{ this.grid.indexOf(row) + 1 }} 
-          <div *ngFor="let cell of row" class="cell"
-            [class.cell-correct]="cell.status === 'correct'"
-            [class.cell-present]="cell.status === 'present'"
-            [class.cell-default]="cell.status === 'default'">
-              {{ cell.letter | uppercase }}
-          </div>
-        </div>
-        
-        <form [formGroup]="gameForm" (ngSubmit)="submitGuess()" *ngIf="!gameOver">
-          <input type="text"
-            id="guess-input"
-            name="guess"
-            formControlName="guess"
-            [attr.maxlength]="this.length"
-            placeholder="Your guess"
-            autofocus>
-          <button type="submit">Submit</button>
-        </form>
-        
-        <div class="gameover-modal" *ngIf="gameOver">
-          <p>
-            {{ this.guesses[this.guesses.length - 1] === this.word ? 'Congrats, you are correct!🎉🎉' : 'Game Over!' }}
-            <br>
-            <br>
-            word: {{ this.word }}
-          </p>
-        </div>
-      </div>
-
-      <div *ngIf="matchHistory" class="match-history-container">
-        <h2>Match History</h2>
-        <table class="match-history-table">
-          <thead>
-            <tr>
-              <th>PLAYER</th>
-              <th>WORD</th>
-              <th class="guesses-column">GUESSES</th>
-              <th>PLAYED IN</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let history of matchHistoryData.matchHistory">
-              <td>{{ matchHistoryData.username }}</td>
-              <td>{{ history.word.toUpperCase() }} ({{history.word.length}})</td>
-              <td class="guesses-column">
-                <span>PALPITES({{history.guesses.length}}) :</span>
-                <span class="guesses-content">
-                  {{ history.guesses.join(' - ').toUpperCase() }}
-                </span>
-              </td>
-              <td>{{ history.playedIn | date: 'dd/MM/yyyy HH:mm' }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-        
-    <ng-template #notStarted>
-      <p>
-        Please, start the game in the asidebar or go see your match history 
-      </p>
-    </ng-template>
+    @switch (this.contentFlag) {
+      @case(ContentFlag.GAME) {
+        <app-guesses
+          (gameFinished)="onGameFinished()"
+        ></app-guesses>
+      }
+      @case(ContentFlag.HISTORY) {
+        <p>HISTORY</p>
+      }
+      @default {
+        <p>Please click start a new game or click to view your match history.</p>
+      }
+    }
   </section>
 </main>

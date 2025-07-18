@@ -1,156 +1,25 @@
-@import "../../../styles/variables.scss";
+@use "../../../styles/variables.scss" as var;
 
 main {
   display: flex;
   flex-direction: row;
   overflow: hidden;
 
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 
-  color: $text-color;
+  color: var.$text-color;
 
   .main-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+
     overflow-y: auto;
 
-    flex-grow: 1;
+    width: 78vw;
 
-    background-color: $bg-secondary-color;
-
-    p {
-      margin-top: 350px;
-    }
-
-    .game-container {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      align-items: center;
-      margin: 60px 0 60px;
-    }
-          
-    .row {
-      display: flex;
-      gap: 5px;
-    }
-          
-    .cell {
-      width: 40px;
-      height: 40px;
-      border: 2px solid #000000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-          
-    .cell-correct {
-      background-color: rgb(0, 142, 0);
-      border: 2px solid rgb(0, 142, 0);
-      color: white;
-    }
-          
-    .cell-present {
-      background-color: rgb(169, 169, 0);
-      border: 2px solid rgb(169, 169, 0);
-      color: black;
-    }
-          
-    .cell-default {
-      background-color: $bg-color;
-    }
-
-    form input {
-      padding: 8px;
-      border: 1px solid black ;
-      border-radius: 4px;
-      background-color: $bg-color;
-      color: $text-color;
-
-      width: 250px;
-      height: 40px;
-    }
-    
-    form button {
-      margin-left: 8px;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 4px;
-      background-color: $primary-color;
-      color: $text-color;
-      width: 120px;
-      height: 40px;
-      cursor: pointer;
-      box-shadow: 0px 8px 12px rgba(91, 30, 172, 0.2);
-    }
-
-    .gameover-modal {
-      position: fixed;
-      top: 50;
-      left: 50;
-      width: 600px;
-      height: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      border-radius: 20px;
-
-      z-index: 100;
-      
-      background-color: $bg-color;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      padding: 20px;
-
-      p {
-        color: $text-color;
-        font-size: 1.5rem;
-        text-align: center;
-        margin: 0;
-      }
-    }
-
-    .match-history-container {
-      width: 1300px;
-      margin: 60px auto;
-      padding: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      overflow-x: auto;
-    }
-    
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      table-layout: fixed; 
-    }
-    
-    th, td {
-      border: 1px solid $primary-color;
-      background-color: $bg-color;
-      padding: 8px;
-      text-align: left;
-      word-wrap: break-word;
-      white-space: pre-wrap;
-    }
-    
-    th {
-      background-color: $primary-color;
-    }
-    
-    .guesses-column {
-      width: 800px;
-    }
-    
-    .guesses-content {
-      padding: 2px;
-      max-height: 3em;
-      overflow: hidden;
-    }
-  } 
+    background-color: var.$bg-secondary-color;
+  }
 }
