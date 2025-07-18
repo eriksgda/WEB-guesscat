@@ -1,0 +1,22 @@
+@for (guess of this.guesses; track guess) {
+  <div class="guess-wrapper">
+    @for (letter of guess.letters; track letter) {
+      <div
+        class="letter-wrapper"
+        [class.correct]="letter.state === LetterState.CORRECT"
+        [class.present]="letter.state === LetterState.PARTIAL_CORRECT"
+        [class.absent]="letter.state === LetterState.WRONG"
+      >
+        {{ letter.char }}
+      </div>
+    }
+  </div>
+}
+
+<app-modal
+  [class.open]="isModalOpen"
+  [type]="type"
+  [possibleContent]="possibleContent"
+  (closed)="toggleModal(ModalType.CLOSE)"
+></app-modal>
+<div class="overlay" [class.open]="isModalOpen" (click)="toggleModal(ModalType.CLOSE)"></div>
