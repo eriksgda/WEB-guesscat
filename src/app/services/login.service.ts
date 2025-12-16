@@ -16,7 +16,7 @@ export class LoginService {
   login(username: string, password: string) {
     return this.httpClient.post<LoginResponse>(this.apiUrl, { username, password }).pipe(
       tap((value) => {
-        this.authService.setAuthToken(value.token);
+        this.authService.setAuthTokens(value.access_token, value.refresh_token);
       })
     )
   }

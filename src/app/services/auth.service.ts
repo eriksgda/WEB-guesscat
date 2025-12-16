@@ -5,16 +5,18 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly AUTH_TOKEN_KEY = "auth-token";
+  private readonly AUTH_ACCESS_TOKEN_KEY = "auth-access-token";
+  private readonly AUTH_REFRESH_TOKEN_KEY = "auth-refresh-token"
 
   constructor(private router: Router) { }
 
   isAuthenticated(): boolean {
-    return !!sessionStorage.getItem(this.AUTH_TOKEN_KEY);
+    return !!sessionStorage.getItem(this.AUTH_ACCESS_TOKEN_KEY);
   }
 
-  setAuthToken(token: string): void {
-    sessionStorage.setItem(this.AUTH_TOKEN_KEY, token);
+  setAuthTokens(access_token: string, refresh_token: string): void {
+    sessionStorage.setItem(this.AUTH_ACCESS_TOKEN_KEY, access_token);
+    sessionStorage.setItem(this.AUTH_REFRESH_TOKEN_KEY, refresh_token)
   }
 
   clearAuthToken(): void {
@@ -23,7 +25,7 @@ export class AuthService {
   }
 
   getToken(): string | null {
-    return sessionStorage.getItem(this.AUTH_TOKEN_KEY);
+    return sessionStorage.getItem(this.AUTH_ACCESS_TOKEN_KEY);
   }
 
   getUsername(): string | null {
