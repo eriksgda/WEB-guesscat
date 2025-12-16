@@ -26,42 +26,52 @@
         <h2>About the project and the game </h2>
         <div class="about-wrapper">
           <p>
-            Esse projeto teve como proprósito educacional, ou seja, eu fiz apenas com o intuito de aprender a desenvolver
-            um website por completo, incluindo banco de dados, backend e frontend.
-            <br>
-            O GuessCAT possui grande inspiração no site Termo, entretanto tem algumas variações do original.
-            <br>
+            Este projeto tem como proprósito o desenvolvimento técnico em desenvolvimento de websites, ou seja, foi feito apenas com o intuito de aprender a desenvolver
+            um website por completo, incluindo banco de dados, backend e frontend, portanto, não possui nenhum fim lucrativo, somente educacional e para diversão.
+          </p>
+          <p>
+            O GuessCAT possui grande inspiração no site Termo,o qual você pode acesar a qualquer momento clicando <a href="https://term.ooo/" target="_blank">AQUI</a>, entretanto tem algumas variações do original, o que vale a pena ser explorado por você!
+          </p>
+          <p>
             <strong>-</strong> É necessário se cadastrar no site para poder jogar, como já informado, o site possui
-            intuito educacional, isso inclui autenticação e autorização!
-            <br>
+            intuito educacional, ou seja, isso inclui autenticação e autorização, já que é um dos temas mais importantes no desenvolvimento web!
+          </p>
+          <p>
             <strong>-</strong> Você pode jogar quantas vezes quiser, nao se prenda a jogar apenas um por dia!
           </p>
+
         </div>
         <div class="text-wrapper">
-          <h3>Language button</h3>
-          <div class="image-wrapper">
-            <img src="" alt=""/>
+          <div class="title-wrapper">
+            <h3>Learn button</h3>
+            <div class="image-wrapper">
+              <lucide-icon name="circle-question-mark" size="32"></lucide-icon>
+            </div>
           </div>
           <p>
-            Aqui vou explicar o botao de LAN. deixar a interface em EN ou PT
+            Caso ainda não saiba como jogar o jogo, no canto superior direito, clique neste ícone <span></span> <lucide-icon name="circle-question-mark" size="32"></lucide-icon> (recomendo para todos).
           </p>
         </div>
         <div class="text-wrapper">
-          <h3>Learn button</h3>
-          <div class="image-wrapper">
-            <img src="" alt=""/>
+          <div class="title-wrapper">
+            <h3>Language button</h3>
+            <div class="image-wrapper">
+              <lucide-icon name="languages" size="32"></lucide-icon>
+            </div>
           </div>
           <p>
-            Aqui vou explicar o botao de (?). explicar as regras do jogo
+            Para trocar a linguagem da INTERFACE, no canto superior direito, clique neste ícone<span></span><lucide-icon name="languages" size="32"></lucide-icon> (Somente EN e PT-BR).
           </p>
         </div>
         <div class="text-wrapper">
-          <h3>Contact button</h3>
-          <div class="image-wrapper">
-            <img src="" alt=""/>
+          <div class="title-wrapper">
+            <h3>Contact button</h3>
+            <div class="image-wrapper">
+              <lucide-icon name="ellipsis"></lucide-icon>
+            </div>
           </div>
           <p>
-            Aqui vou explicar o botao de CON. detalhes sobre o projeto e contatos
+            Para saber mais sobre o projeto e mim, no canto superior direito, clique neste ícone<span></span><lucide-icon name="ellipsis"></lucide-icon> (ALERTA ⚠ NERDICE).
           </p>
         </div>
       </div>
@@ -69,7 +79,8 @@
         <button (click)="toggleModal(ModalType.LEARN)">
           <lucide-icon name="circle-question-mark" size="32"></lucide-icon>
         </button>
-        <button (click)="toggleModal(ModalType.LANGUAGE)">
+        <!-- (click)="toggleModal(ModalType.LANGUAGE)" -->
+        <button>
           <lucide-icon name="languages" size="32"></lucide-icon>
         </button>
         <button (click)="toggleModal(ModalType.CONTACTS)">
